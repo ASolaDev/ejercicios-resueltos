@@ -10,6 +10,46 @@ package com.mycompany.proyecto_tarea3_3;
  */
 public class MisMetodos {
     
+    public static void menu(){
+            System.out.println("********************************************");
+            System.out.println("Menú de opciones:");
+            System.out.println("1.Calcular perímetro de rectángulo");
+            System.out.println("2.Convertir grados Celsius a Fahrenheit");
+            System.out.println("3.Calcular área y volumen de un cilindro");
+            System.out.println("4.Resolver la ecuación ax+b=0");
+            System.out.println("5.Calcular la energía");
+            System.out.println("6.Calcular la conversión de km a millas");
+            System.out.println("7.Calcular IMC de 5 personas");
+            System.out.println("8.Calcular la media aritmética de 15 alumnos");
+            System.out.println("9.Introducir número y te diré el mes");
+            System.out.println("10.Sumar las potencias de 2 entre dos números");
+            System.out.println("11.Introducir 10 números y te diré cuantos 0 hay");
+            System.out.println("12.Introducir números y te diré cuantos 0 hay");
+            System.out.println("13.Mostrar números entre a y b");
+            System.out.println("14.Mostrar múltiplos de 5 y 3 entre a y b");
+            System.out.println("15.Sumar los números pares y media de los impares");
+            System.out.println("16.Mostrar múltiplos de 3 entre 100 y 150");
+            System.out.println("17.Mostrar cuantos billetes y monedas");
+            System.out.println("18.Mostrar suma de los pares entre 50 y 500");
+            System.out.println("19.Mostrar cifras de un número");
+            System.out.println("20.Mostrar cociente y resto de dos números al azar");
+            System.out.println("21.Calcular el número mayor");
+            System.out.println("22.Mostrar factorial de un número al azar");
+            System.out.println("23.Motrar factorial de los 5 primeros números naturales");
+            System.out.println("24.Mostrar tabla de multiplicar de un número al azar");
+            System.out.println("25.Mostrar tabla de multiplicar de varios números");
+            System.out.println("26.Motrar los divisores de un número");
+            System.out.println("27.Calcular el número de divisores y la suma");
+            System.out.println("28.Indicar si un número es perfecto");
+            System.out.println("29.Indicar si un número es primo");
+            System.out.println("30.Mostrar todos los números primos entre dos números");
+            System.out.println("31.Mostrar los 10 primeros números primos");
+            System.out.println("32.Mostrar el primer número primo a partir de otro");
+            System.out.println("33.Salir");
+            System.out.println("\n********************************************");              
+    }
+
+    
     //Método: perimetro_rectangulo
     public static double perimetro_rectangulo(double a, double b)
     {
@@ -104,7 +144,7 @@ public class MisMetodos {
      } 
    
    public static long sumaCuadradosEntreX_Y(int x, int y){
-       if (x<y) //Intercambio de valores entre las 2 variables
+       if (x>y) //Intercambio de valores entre las 2 variables
        {
            int aux=x;
            x=y;
@@ -136,6 +176,59 @@ public class MisMetodos {
          for(int i=x;i>=y;i--) System.out.println(i);
      }
    
+   public static long factorial(int n){
+       long f=1;
+       for (int i = 1; i <= n; i++) {
+           f*=i;
+       }
+       return f;
+   }
+     
+   public static void tabla_multiplicar(int n)
+    {
+        System.out.println("La tabla de "+n);
+        for(int i=1;i<=10;i++)
+        {
+            System.out.println(n+" * "+i+" = "+(n*i));
+        }
+    }
    
+    public static int contador_divisores(int n)
+    {
+        int cont=0;
+        for (int i=1;i<=n;i++)
+        {
+            if(n%i==0) cont++;
+        }
+        return cont;
+    }
+    
+    public static int suma_divisores(int n)
+    {
+        int suma=0;
+        for (int i=1;i<=n;i++)
+        {
+            if(n%i==0) suma+=i;
+        }
+        return suma;
+    }
+    
+    //En el último vídeo de los míos o penúltimo viene explicado de otra forma
+    public static boolean primo(int n) //Se puede hacer de varias formas hasta la máxima optimización             
+    {
+        //lo voy a hacer sencillo.
+        // Un número es primo cuando solo es divisible entre 1 y sí mismo.
+        // ¿Cuántos divisores tiene un número primo? 2
+        // Si el número de divisores = 2 entonces el número es primo
+        
+        boolean esPrimo; //se supone que todo número es primo, HASTA que se DEMUESTRE LO CONTRARIO
+        
+        if (n==1 || MisMetodos.contador_divisores(n) == 2 ) //El número 1 siempre es primo, aunque tenga 1 divisor
+            esPrimo=true;
+        else 
+            esPrimo=false;
+         
+        return esPrimo;    
+    }
    
 }

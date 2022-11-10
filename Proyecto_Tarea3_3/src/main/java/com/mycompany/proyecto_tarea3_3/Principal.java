@@ -11,56 +11,14 @@ package com.mycompany.proyecto_tarea3_3;
  */
 public class Principal {
     
-    //Se puede meter un método en la clase Principal
-    //En este caso un método estático: menu
-    public static void menu(){
-            System.out.println("********************************************");
-            System.out.println("Menú de opciones:");
-            System.out.println("1.Calcular perímetro de rectángulo");
-            System.out.println("2.Convertir grados Celsius a Fahrenheit");
-            System.out.println("3.Calcular área y volumen de un cilindro");
-            System.out.println("4.Resolver la ecuación ax+b=0");
-            System.out.println("5.Calcular la energía");
-            System.out.println("6.Calcular la conversión de km a millas");
-            System.out.println("7.Calcular IMC de 5 personas");
-            System.out.println("8.Calcular la media aritmética de 15 alumnos");
-            System.out.println("9.Introducir número y te diré el mes");
-            System.out.println("10.Sumar las potencias de 2 entre dos números");
-            System.out.println("11.Introducir 10 números y te diré cuantos 0 hay");
-            System.out.println("12.Introducir números y te diré cuantos 0 hay");
-            System.out.println("13.Mostrar números entre a y b");
-            System.out.println("14.Mostrar múltiplos de 5 y 3 entre a y b");
-            System.out.println("15.Sumar los números pares y media de los impares");
-            System.out.println("16.Mostrar múltiplos de 3 entre 100 y 150");
-            System.out.println("17.Mostrar cuantos billetes y monedas");
-            System.out.println("18.Mostrar suma de los pares entre 50 y 500");
-            System.out.println("19.Mostrar cifras de un número");
-            System.out.println("20.Mostrar coeficiente y resto de dos números al azar");
-            System.out.println("21.Calcular el número mayor");
-            System.out.println("22.Mostrar factorial de un número al azar");
-            System.out.println("23.Motrar factorial de los 5 primeros números naturales");
-            System.out.println("24.Mostrar tabla de multiplicar de un número al azar");
-            System.out.println("25.Mostrar tabla de multiplicar de varios números");
-            System.out.println("26.Motrar los divisores de un número");
-            System.out.println("27.Calcular el número de divisores y la suma");
-            System.out.println("28.Indicar si un número es perfecto");
-            System.out.println("29.Indicar si un número es primo");
-            System.out.println("30.Mostrar todos los números primos entre dos números");
-            System.out.println("31.Mostrar los 10 primeros números primos");
-            System.out.println("32.Mostrar el primer número primo a partir de otro");
-            System.out.println("33.Salir");
-            System.out.println("\n********************************************");              
-    }
-
+    
+    
     public static void main(String[] args) {
         int opcion;
         
         do
         {
-            menu(); //Llamada al método de arriba: menu()
-                //fijaos que NO es obligatorio poner el nombre de la clase
-                // como Principal.menu();
-                
+            MisMetodos.menu(); //Llamada al método de arriba: menu()                
             opcion=Introducir.entero("Introduzca una opción: ");
                    
             switch(opcion)
@@ -153,7 +111,7 @@ public class Principal {
                     int x=Introducir.entero("Introduzca el primer número: ");
                     int y=Introducir.entero("Introduzca el primer número: ");
                     
-                    System.out.println("La suma de las potencias de dos de "+x+" y "+y+" es de "+MisMetodos.sumaCuadradosEntreX_Y(x,y));
+                    System.out.println("La suma de las potencias entre "+x+" y "+y+" es "+MisMetodos.sumaCuadradosEntreX_Y(x,y));
                 }
                     
                 case 11 -> {
@@ -190,182 +148,315 @@ public class Principal {
                 }
                    
                 case 14 -> { 
-                    System.out.print("Dime un número:");
-                    int primero = teclado.nextInt();
-                    System.out.print("Dime otro número:");
-                    int segundo = teclado.nextInt();
-                    System.out.println("Los múltiplos de 3 son:");
-                    MisMetodos.Metodos.multiplo3(primero,segundo);
-                    System.out.println("Los múltiplos de 5 son:");
-                    MisMetodos.Metodos.multiplo5(primero,segundo);
+                    //Mostrar los múltiplos de 5 y 3 comprendidos entre dos números leídos por teclado
+                    int primero=Introducir.entero("Introduzca el primer número:");
+                    int segundo=Introducir.entero("Introduzca el segundo número:");    
+                    if (primero > segundo){
+                        int aux=primero;
+                        primero=segundo;
+                        segundo=aux;
+                    }
+                    for (int i = primero; i <= segundo; i++) {
+                        if (i%3==0 && i%5==0)
+                            System.out.println(i+" es múltiplo de 3 y 5");
+                    }
                 }
                  
                 case 15 -> { 
-                    int sumapares=0;
-                    int contimpares=0;
-                    int sumaimpares=0;
+                    /*
+                    Dados 10 números enteros leídos por teclado, visualizar la suma de los
+                        números pares de la lista. ¿Cuántos son números pares y cuál es la media
+                        aritmética de los números impares?
+                    */
+                    int sumaPares=0, contImpares=0;
+                    double sumaImpares=0;          
+                    System.out.println("Dime 10 números");
                     int num;
-                    int i;
-                    for(i=0;i<10;i++)
-                    {
-                        System.out.print("Dime un número:");
-                        num=teclado.nextInt();
-                        sumapares+=MisMetodos.Metodos.suma_pares(num);
-                        sumaimpares+=MisMetodos.Metodos.suma_impares(num);
-                        contimpares+=MisMetodos.Metodos.contador_impares(num);
+                    for(int i=1;i<=10;i++) 
+                    {                        
+                        num=Introducir.entero("Dime un número:");
+                        if (num%2 == 0) sumaPares+=num;
+                        else{
+                            contImpares++;
+                            sumaImpares+=num;
+                        }
                     }
-                    System.out.println("La suma de los números pares es de: " +sumapares);
-                    System.out.println("Se han introducido "+contimpares+" números impares");
-                    System.out.println("La media de los números impares es de "+(sumaimpares/contimpares));
+                    System.out.println("La suma de los números pares es de: " +sumaPares);
+                    System.out.println("Se han introducido "+contImpares+" números impares");
+                    System.out.println("La media de los números impares es de "+(sumaImpares/contImpares));
                 }
                     
                 case 16 -> {
-                    int primero = 100;
-                    int segundo = 150;
+                    /*
+                    De todos los no comprendidos entre 100 y 150, mostrar todos los múltiplos de 3.
+                    Indicar cuántos múltiplos hay de 5. Calcula la suma de todos los pares.
+                    */                    
                     System.out.println("Los múltiplos de 3 entre 100 y 150 son:");
-                    MisMetodos.Metodos.multiplo3(primero,segundo);
-                    MisMetodos.Metodos.contador_multiplo5(primero,segundo);
-                    System.out.println("La suma de los pares es de " +MisMetodos.Metodos.suma_pares_entre_dos_numeros(primero,segundo));
+                    int contMult5=0, sumaPares=0;
+                    for(int i=100; i<=150; i++){
+                        if (i%3 == 0) System.out.println(i+" es múltiplo de 3");
+                        
+                        if (i%5 == 0) contMult5++;
+                        
+                        if (i%2 == 0) sumaPares+=i;
+                    }
+                    System.out.println("Entre 100 y 150 hay "+contMult5+" múltiplos de 5");
+                    System.out.println("La suma de los pares comprendidos entre 100 y 150 es "+sumaPares);
                 } 
   
-                case 17 -> {
-                    //solo para cantidades enteras
-                    int cantidad=0;
-                    System.out.print("Introduzca una cantidad de dinero mayor que 100: ");
-                    cantidad=teclado.nextInt(); 
-                    if(cantidad>100) MisMetodos.Metodos.desglose_dinero(cantidad);
-                    else System.out.println("ERROR, cantidad no disponible");
+                case 17 -> {   
+                    /*
+                    cómo se podría expresar un dinero usando el mínimo número de billetes y monedas                     
+                    */
+                    
+                    float cantidad=Introducir.realSimple("Introduzca una cantidad de dinero mayor que 100: ");
+                    if(cantidad<=100) System.out.println("Error, se pidió una cantidad mayor que 100€");                        
+                    else {
+                        float dinero=cantidad;
+                        int dineroEntero=(int)dinero;
+                        
+                        int centimos=(int)((dinero * 100 - dineroEntero*100)); //Para obtener los céntimos en número entero                        
+                        
+                        int  b500=dineroEntero/500; //billetes de 500€
+                        dineroEntero%=500; //resto de dinero que queda -en cantidad entera-
+                       
+                        int b200=dineroEntero/200; //billetes de 200€
+                        dineroEntero%=200; //resto de dinero que queda
+                        
+                        int  b100=dineroEntero/100; //billetes de 100€
+                        dineroEntero%=100; //resto de dinero que queda -en cantidad entera-
+                       
+                        int b50=dineroEntero/50; //billetes de 50€
+                        dineroEntero%=50; //resto de dinero que queda
+                        
+                        int  b20=dineroEntero/20; //billetes de 20€
+                        dineroEntero%=20; //resto de dinero que queda -en cantidad entera-
+                       
+                        int b10=dineroEntero/10; //billetes de 10€
+                        dineroEntero%=10; //resto de dinero que queda
+                        
+                        int  b5=dineroEntero/5; //billetes de 5€
+                        dineroEntero%=5; //resto de dinero que queda -en cantidad entera-
+                       
+                        int mn2=dineroEntero/2; //monedas de 2€
+                        int mn1=mn2%2; //resto de dinero que queda
+                        
+                        
+                        int mn50c=centimos/50;
+                        centimos%=50;
+                        int mn20c=centimos/20;
+                        centimos%=20;
+                        int mn10c=centimos/10;
+                        centimos%=10;
+                        int mn5c=centimos/5;
+                        centimos%=5;
+                        int mn2c=centimos/2;
+                        int mn1c=centimos%2;
+                        
+                        System.out.println("Hay "+b500+" billetes de 500€");
+                        System.out.println("Hay "+b200+" billetes de 200€");
+                        System.out.println("Hay "+b100+" billetes de 100€");
+                        System.out.println("Hay "+b50+" billetes de 50€");
+                        System.out.println("Hay "+b20+" billetes de 20€");
+                        System.out.println("Hay "+b10+" billetes de 10€");
+                        System.out.println("Hay "+b5+" billetes de 5€");
+                        System.out.println("Hay "+mn2+" monedas de 2€");
+                        System.out.println("Hay "+mn1+" monedas de 1€"); 
+                        System.out.println("Hay "+mn50c+" monedas de 50 céntimos");
+                        System.out.println("Hay "+mn20c+" monedas de 20 céntimos");
+                        System.out.println("Hay "+mn10c+" monedas de 10 céntimos");
+                        System.out.println("Hay "+mn5c+" monedas de 5 céntimos");
+                        System.out.println("Hay "+mn2c+" monedas de 2 céntimos");
+                        System.out.println("Hay "+mn1c+" monedas de 1 céntimo"); 
+                    }
                 }
                 
                 case 18 -> {
-                    int primero = 50;
-                    int segundo = 500;
-                    System.out.println("La suma de los pares entre 50 y 500 es de " +MisMetodos.Metodos.suma_pares_entre_dos_numeros(primero,segundo));
-                    System.out.println("Los múltiplos de 3 entre 50 y 500 son:");
-                    MisMetodos.Metodos.multiplo3(primero,segundo);
-                    MisMetodos.Metodos.contador_multiplo5(primero,segundo);
+                    /*
+                    Hallar la suma de los pares comprendidos entre 50 y 500, muestra los múltiplos 3
+                    y cuenta los múltiplos de 5.
+                    */
+                    System.out.println("Los múltiplos de 3 entre 100 y 150 son:");
+                    int contMult5=0, sumaPares=0;
+                    for(int i=50; i<=500; i++){
+                        if (i%3 == 0) System.out.println(i+" es múltiplo de 3");
+                        
+                        if (i%5 == 0) contMult5++;
+                        
+                        if (i%2 == 0) sumaPares+=i;
+                    }
+                    System.out.println("Entre 50 y 500 hay "+contMult5+" múltiplos de 5");
+                    System.out.println("La suma de los pares comprendidos entre 50 y 500 es "+sumaPares);                    
                 }
                     
-                case 19 -> { //no sé hacerlo
+                case 19 -> {
+                    /*
+                    Introducir un número entero positivo menor que 50000 por teclado, indicar qué cifras posee dicho número.
+                    Pregunté a Juan Pedro -mi compañero- por el enunciado
+                    */
+                    // Indicar el número de cifras que tiene un número.
+                    int num=Introducir.entero("Introduzca un número y le diré el total de cifras que posee:");
+                    int cifras=1; //El número mínimo de cifras de un número entero positivo es 1
+                    while (num >= 10){
+                        cifras++;
+                        num/=10; 
+                    }
+                    System.out.println("Tiene "+cifras+" cifras en total");                                       
                 }
                     
                 case 20 -> {
+                    /*
+                    Dados 2 números enteros generados al azar en el rango [1..1000], calcular cuál es el cociente y 
+                    cuál es el resto utilizando el método de las restas sucesivas
+                    */
                     int dividendo = (int) (Math.random() * 1000 + 1);
                     int divisor = (int) (Math.random() * 1000 + 1);
-                    if(divisor>dividendo)
+                    if(divisor>dividendo) //intercambio de valores
                     {
                         int aux=dividendo;
                         dividendo=divisor;
                         divisor=aux;
                     }
                     System.out.println("El dividendo es "+dividendo+" y el divisor es "+divisor);
-                    MisMetodos.Metodos.restas_sucesivas(dividendo,divisor);
+                    int resto=dividendo;
+                    int cociente=0;
+        
+                    while (resto>=divisor)
+                    {
+                        resto-=divisor;
+                        cociente++;
+                    }
+                    System.out.println("El cociente es " + cociente + " y el resto es " + resto);    
                 }
                     
                 case 21 -> {
-                    int mayor=0;
+                    /*
+                    Introduce por teclado 10 números enteros, calcular cuál es el mayor de ellos.
+                    ¡¡¡ PUEDEN SER NEGATIVOS !!!
+                    */
+                    int mayor=Integer.MIN_VALUE; //Es el valor negativo más pequeño de todos los enteros
                     int n;
-                    int i;
-                    for(i=0;i<10;i++)
-                    {
-                        System.out.print("Dime un número: ");
-                        n=teclado.nextInt();
+                    
+                    for(int i=1;i<=10;i++){                        
+                        n=Introducir.entero("Dime un número: ");
                         if(n>mayor) mayor=n;
                     }
                     System.out.println("El número mayor es: "+mayor);
+                    
+                    //Otra forma, introducir el primer número entero y darle el valor mayor para tomarlo como referencia a los demás
+                    /*
+                      int n=Introducir.entero("Dime el 1er número: ");
+                      int mayor=n; 
+                      for (int i = 2; i <= 10; i++) {  //Sería desde el 2 número hasta el 10, de uno en uno 
+                        n=Introducir.entero("Dime el número "+i+":");
+                        if (n > mayor) mayor=n;
+                      }
+                    System.out.println("El número mayor es: "+mayor);   
+                    */
                 }
                     
                 case 22 -> {
+                    //Calcular el factorial de un número entero generado al azar en el rango [1..10].
                     int azar = (int) (Math.random() * 10 + 1);
-                    System.out.println("El factorial del número "+azar+" es " +MisMetodos.Metodos.factorial(azar));
+                    System.out.println("El factorial del número "+azar+" es " +MisMetodos.factorial(azar));
                 }
                     
                 case 23 -> {
-                    int n;
-                    for(n=1;n<=5;n++)
+                    // Calcular el factorial de los 5 primeros números naturales.                    
+                    for(int n=1;n<=5;n++)
                     {
-                        System.out.println("El factorial del número "+n+" es " +MisMetodos.Metodos.factorial(n));
+                        System.out.println("El factorial del número "+n+" es " +MisMetodos.factorial(n));
                     }
                 }
                     
                 case 24 -> {
+                    //Generar un número entero al azar en el rango [1..10]. Mostrar por pantalla la tabla de multiplicar de ese número
                     int azar = (int) (Math.random() * 10 + 1);
-                    MisMetodos.Metodos.tablas_multiplicar(azar);
+                    MisMetodos.tabla_multiplicar(azar);
                 }
                     
                 case 25 -> {
-                    System.out.print("Dime un número entero entre el 1 y el 9: ");
-                    int primero = teclado.nextInt();
-                    System.out.print("Dime otro número entero entre el 1 y el 9: ");
-                    int segundo = teclado.nextInt();
-                    System.out.println("Los tablas de multiplicar de los números entre "+primero+" y " +segundo+ " son:");
-                    if(primero>segundo)
+                    //Mostrar las tablas de multiplicar de los números comprendidos entre dos números leídos por teclado                    
+                    int x = Introducir.entero("Dime el primer número: ");
+                    int y = Introducir.entero("Dime el segundo número: ");                    
+                    
+                    if(x > y) //intercambio de valores entre las dos variables
                     {
-                        int aux=segundo;
-                        segundo=primero;
-                        primero=aux;
+                        int aux=x;
+                        x=y;
+                        y=aux;
                     }
-                    int n;
-                    for(n=primero;n<=segundo;n++)
+                    
+                    System.out.println("Los tablas de multiplicar de los números entre "+x+" y " +y+ " son:");
+                    for(int n=x; n<=y; n++)
                     {
-                        MisMetodos.Metodos.tablas_multiplicar(n);
+                        MisMetodos.tabla_multiplicar(n);
                     }
                 }
                     
                 case 26 -> {
-                    System.out.print("Dime un número entero: ");
-                    int n = teclado.nextInt();
+                    //Mostrar por pantalla los divisores de un número entero introducido por teclado                    
+                    int n = Introducir.entero("Dime un número entero: ");
                     System.out.println("Los divisores de "+n+" son: ");
-                    MisMetodos.Metodos.divisores(n);
+                    for (int i = 1; i <= n; i++) {
+                        if (n % i==0) System.out.println(i+" es divisor");
+                    }
                 }
                     
                 case 27 -> {
-                    System.out.print("Dime un número entero: ");
-                    int n = teclado.nextInt();
-                    System.out.println(n+ " tiene " +MisMetodos.Metodos.contador_divisores(n)+" divisores");
-                    System.out.println("La suma de sus divisores es de "+MisMetodos.Metodos.suma_divisores(n));
+                    //Calcular el número de divisores que tiene un número entero introducido por teclado y la suma de éstos                 
+                    int n = Introducir.entero("Dime un número entero: ");
+                    System.out.println(n+ " tiene " +MisMetodos.contador_divisores(n)+" divisores");
+                    System.out.println("La suma de sus divisores es  "+MisMetodos.suma_divisores(n));
                 }
                     
                 case 28 -> {
-                    System.out.print("Dime un número entero: ");
-                    int n = teclado.nextInt();
-                    if(MisMetodos.Metodos.suma_divisores(n)-n==n) System.out.println("El número "+n+" es perfecto");
-                    else System.out.println("El número "+n+" NO es perfecto");
+                    // Introducir un número por teclado e indica si es o no perfecto. El nº 6 es perfecto, suma: 1+2+3+6  - 6 = 6                    
+                    int n = Introducir.entero("Dime un número entero: ");
+                    
+                    if((MisMetodos.suma_divisores(n) - n) == n) 
+                        System.out.println("El número "+n+" es perfecto");
+                    else
+                        System.out.println("El número "+n+" NO es perfecto");
                 }
                     
                 case 29 -> {
-                    System.out.print("Dime un número entero: ");
-                    int n = teclado.nextInt();
-                    if(MisMetodos.Metodos.primo(n)==true) System.out.println(n+" es primo");
-                    else System.out.println(n+" no es primo");
+                    // Introducir un número entero por teclado, e indica si es primo o no.                   
+                    int n = Introducir.entero("Dime un número entero: ");
+                    if(MisMetodos.primo(n) == true)
+                        System.out.println(n+" es primo");
+                    else
+                        System.out.println(n+" no es primo");
                 }
                     
                 case 30 -> {
-                    System.out.print("Dime un número entero: ");
-                    int primero = teclado.nextInt();
-                    System.out.print("Dime un número entero: ");
-                    int segundo = teclado.nextInt();
-                    System.out.println("Los números primos entre "+primero+" y " +segundo+ " son:");
+                    // Mostrar todos los números primos comprendidos entre dos números introducidos por teclado                   
+                    int primero = Introducir.entero("Dime un número entero: ");                    
+                    int segundo = Introducir.entero("Dime otro número entero: ");
+                    
                     if(primero>segundo)
                     {
                         int aux=segundo;
                         segundo=primero;
                         primero=aux;
                     }
-                    int n;
-                    for(n=primero;n<=segundo;n++)
+                    
+                    System.out.println("Los números primos entre "+primero+" y " +segundo+ " son:");                   
+                    for(int n=primero; n<=segundo; n++)
                     {
-                        if(MisMetodos.Metodos.primo(n)==true)System.out.println(n);
+                        if(MisMetodos.primo(n) == true)
+                            System.out.println(n+" es primo");
                     }
                 }
                     
                 case 31 -> {
-                    System.out.println("Los 10 primeros números primos son:");
+                    // Mostrar los 10 primeros números primos.                    
                     int contprimos=0;
-                    int i;
-                    for(i=1;contprimos<10;i++)
+                    System.out.println("Los 10 primeros números primos son:");
+                    
+                    for(int i=1; contprimos<10 ;i++)
                     {
-                        if(MisMetodos.Metodos.primo(i)==true)
+                        if(MisMetodos.primo(i)) //es lo mismo que decir MisMetodos.primo(i)==true
                         {
                             System.out.println(i);
                             contprimos++;
@@ -374,26 +465,28 @@ public class Principal {
                 }
                     
                 case 32 -> {
-                    //no se porqué no me funciona
-                    System.out.print("Dime un número entero:");
-                    int n = teclado.nextInt();
-                    int i;
-                    for(i=n;;i++)
+                    //Mostar el primer número primo a partir de un número introducido por teclado. 
+                    
+                    int n = Introducir.entero("Dime un número entero:");
+                    
+                    for(int i=n; ;i++)
                     {
-                        if(MisMetodos.Metodos.primo(n)==true) 
+                        if(MisMetodos.primo(i)) 
                         {
                             System.out.println("El primer número primo es: "+i);
                             break;
                         }
                     }
                 }
-
                 
-            }   
+                default -> System.out.println("Opción errónea, elija número de nuevo");
+                
+            } //Fin de switch            
            
-            if(opcion>33)System.out.println("Opción errónea, elija número de nuevo");
             
-        }while(opcion!=33); System.out.println("Gracias por utilizar el programa");
+        }while(opcion!=33);
+        
+        System.out.println("Gracias por utilizar el programa");
             
     }
 }
