@@ -66,13 +66,15 @@ public class MisMetodos {
     
     public static void ecuacion(double a, double b)
     {
-        double x=-b/a;
+        double x;
         if(a==0 && b==0) 
             System.out.println("La solución es indeterminada");
         else if (a==0 && b!=0) 
             System.out.println("La solución es imposible");
-        else 
+        else {
+            x=-a/b;
             System.out.println("El resultado es x= "+x);         
+             }
     }
     
     public static double energia(double m)
