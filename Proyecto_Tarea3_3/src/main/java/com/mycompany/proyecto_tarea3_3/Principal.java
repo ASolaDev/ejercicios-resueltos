@@ -18,7 +18,7 @@ public class Principal {
         
         do
         {
-            MisMetodos.menu(); //Llamada al método de arriba: menu()                
+            MisMetodos.menu(); 
             opcion=Introducir.entero("Introduzca una opción: ");
                    
             switch(opcion)
