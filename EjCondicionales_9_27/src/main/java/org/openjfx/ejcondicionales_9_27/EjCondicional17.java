@@ -42,7 +42,7 @@ public class EjCondicional17 {
         precioHora=Double.parseDouble(cadena);
                         
        if (horasTrabajadas>40){
-          salario=40*precioHora + (horasTrabajadas - 40)*precioHora;
+          salario=40*precioHora + (horasTrabajadas - 40)*precioHora*1.5;
        }
        else{
           salario=horasTrabajadas*precioHora;
