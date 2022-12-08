@@ -140,7 +140,7 @@ public class Ejercicios {
         do{
            //Obligo a que tipoPieza sea 0,1 ó 2
            tipoPieza=Introducir.enteroPositivo("Dime el tipo de la pieza que desee: (1 o 2), con 0 finaliza el pedido");
-           while(tipoPieza>2){ //Si se utilizara Introducir.enteroPositivo, entonces while(tipo>2)
+           while(tipoPieza > 2){ 
                System.out.println("Error, tipo debe ser 0, 1 ó 2");
                tipoPieza=Introducir.enteroPositivo("Dime el tipo de la pieza que desee: (1 o 2), con 0 finaliza el pedido");
             }
