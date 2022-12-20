@@ -1,3 +1,5 @@
+package com.mycompany.proyecto_tutoria13diciembre;
+public class Ej28{
 public static void main(String[] args) {
 		int [][]m = {
 			{1, 12, 6, 5, 8, 7, 9, 4, 5, 3, 6, 12, 5, 4, 9, 10, 11, 15, 2, 6, 8, 12, 11, 13, 12, 14, 10, 11, 10, 21, 10},
@@ -16,9 +18,11 @@ public static void main(String[] args) {
 		
 		String []mes = {"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre",
 				"Octubre", "Noviembre", "Diciembre"};
-		
+		/*
 		apartadoA(m, mes);
 		apartadoB(m, mes);
 		apartadoC(m, mes);
 		apartadoD(m, mes);
+               */
 	}
+}
