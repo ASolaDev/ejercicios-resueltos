@@ -89,7 +89,7 @@ public class Personaje {
         if (this.ph>0)
         {
             this.ph--;
-            return this.nivel*this.fisico;
+            return this.nivel*this.fuerza;
         }
         else 
             return 0;        
