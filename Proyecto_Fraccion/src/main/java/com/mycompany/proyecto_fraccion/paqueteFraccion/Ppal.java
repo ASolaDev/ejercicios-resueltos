@@ -35,22 +35,22 @@ public class Ppal {
       f.setDen(h.getNum());
         System.out.println("Fraccion f="+f);
         
-      //En g sale una excepcion: divide by zero, ya que 
-      // g=1/1 y f=1/1, g-f =0 
+      //g. f=23/8
+      f.setNum(23); f.setDen(8);
+        
+      //En g salia una excepcion: divide by zero, ya que 
+      // g=1/1 y f=1/1, g-f =0. Por eso, he puesto f=23/8, asi se evita el error 
       //g.
-      //Fraccion k=g.fraccionResta(f);
-      //System.out.println("Fraccion k="+k);
+      Fraccion k=g.fraccionResta(f);
+      System.out.println("Fraccion k="+k);
       //h.
       Fraccion l=h.fraccionCociente(18,5);
-        System.out.println("Fraccion l="+l);
+      System.out.println("Fraccion l="+l);
       //i.
-      //Como k no se ha podido generar, no se puede utilizar
-      // System.out.println("(f+g)*k="+f.fraccionSuma(g).fraccionProducto(k));
+      System.out.println("(f+g)*k="+f.fraccionSuma(g).fraccionProducto(k));
       //j.
-      // sale una excepcion: divide by zero
-      // h=1/1 - f=1/1 = 0
-      //Fraccion n=g.fraccionCociente(h.fraccionResta(f));
-      //  System.out.println("Fraccion n="+n);
+      Fraccion n=g.fraccionCociente(h.fraccionResta(f));
+      System.out.println("Fraccion n="+n);
       //k.      
       Fraccion m=j.fraccionSuma(l.fraccionSuma(23,8));
         System.out.println("Fraccion m="+m);
