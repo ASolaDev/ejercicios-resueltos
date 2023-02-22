@@ -27,6 +27,7 @@ public class Hombre extends Vertebrado{
         super(numVertebras, peso, fechaNac);
         this.nombre = nombre;
         this.vivo = vivo;
+        if (this.numHijos == 30) throw new IllegalArgumentException("Ya no se admite tener mas hijos");
         this.datosHijos = datosHijos;
         this.numHijos=this.datosHijos.size();
     }
@@ -128,11 +129,12 @@ public class Hombre extends Vertebrado{
         this.vivo=false;
     }
     
-    public void tenerHijo(Hijo nuevoHijo){
+    public void tenerHijo(Hijo nuevoHijo) throws IllegalArgumentException {
         if (this.datosHijos.contains(nuevoHijo)){
             System.out.println("Error, hijo ya registrado...");
         }
         else{
+            if (this.numHijos == 30) throw new IllegalArgumentException("Ya no se puede tener mas hijos");
             this.datosHijos.add(nuevoHijo);
             this.numHijos++;
         }

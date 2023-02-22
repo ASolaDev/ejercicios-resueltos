@@ -12,7 +12,7 @@ import java.util.ArrayList;
  */
 public class Teatro {
    
-    private String nombre;
+    private String nombre;    
     private ArrayList <Funcion> listaFunciones;
     //private ArrayList <Funcion> listaFunciones=new ArrayList <>(); 
     //Me corrige netBeans como redudante la 2ª: <Funcion>
