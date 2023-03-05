@@ -13,8 +13,8 @@ import paqueteOtros.Nif;
  * @author isabel
  */
 public class EmpleadoComisiones extends Empleado{
-    private float ventas;
-    private final static int COMISION_VENTAS=10;
+    protected float ventas;
+    protected final static int COMISION_VENTAS=10;
 
     public EmpleadoComisiones(float ventas, Nif nif, Nie nie, String nombre, String apellidos, LocalDate fechaNac, LocalDate fechaTrabajo) throws IllegalArgumentException{
         super(nif, nie, nombre, apellidos, fechaNac, fechaTrabajo);

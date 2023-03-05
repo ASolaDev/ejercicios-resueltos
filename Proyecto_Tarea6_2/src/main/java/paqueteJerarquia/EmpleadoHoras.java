@@ -13,9 +13,9 @@ import paqueteOtros.Nif;
  * @author isabel
  */
 public class EmpleadoHoras extends Empleado{
-    private int numHoras;
-    private final static int PAGO_HORA=10;
-    private final static int PAGO_EXTRA=20;
+    protected int numHoras;
+    protected final static int PAGO_HORA=10;
+    protected final static int PAGO_EXTRA=20;
 
     public EmpleadoHoras(int numHoras, Nif nif, Nie nie, String nombre, String apellidos, LocalDate fechaNac, LocalDate fechaTrabajo) throws IllegalArgumentException{
         super(nif, nie, nombre, apellidos, fechaNac, fechaTrabajo);
@@ -23,10 +23,6 @@ public class EmpleadoHoras extends Empleado{
             throw new IllegalArgumentException("Error, las horas han de ser positivas");
         }
         this.numHoras = numHoras;
-    }
-    public EmpleadoHoras(Nif nif, Nie nie, String nombre, String apellidos, LocalDate fechaNac, LocalDate fechaTrabajo) {
-        super(nif, nie, nombre, apellidos, fechaNac, fechaTrabajo);
-        this.numHoras = 0;
     }
     
     //Getter

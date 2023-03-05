@@ -17,11 +17,11 @@ import paqueteOtros.Nif;
 //Dicho salario es 500€.
 //Por cada trienio se incrementa en 20€
 public class EmpleadoFijo extends Empleado{
-    private static int SALARIO_SEMANAL=500;
-    private static int INCREMENTO_TRIENIO=20;
+    protected static int SALARIO_SEMANAL=500;
+    protected static int INCREMENTO_TRIENIO=20;
 
    
-    public EmpleadoFijo(Nif nif, Nie nie, String nombre, String apellidos, LocalDate fechaNac, LocalDate fechaTrabajo) {
+    public EmpleadoFijo(Nif nif, Nie nie, String nombre, String apellidos, LocalDate fechaNac, LocalDate fechaTrabajo) throws IllegalArgumentException{
         super(nif, nie, nombre, apellidos, fechaNac, fechaTrabajo);
     }
         
