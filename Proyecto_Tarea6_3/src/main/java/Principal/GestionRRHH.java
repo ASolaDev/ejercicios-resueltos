@@ -122,7 +122,7 @@ public class GestionRRHH {
         return busco;        
     }
     
-    //Metodo usa Object , instanceof y Upcasting
+    //Metodo usa Object , instanceof y Downcasting explicito
     public Empleado devuelveEmpleadoID(Object object) throws IllegalArgumentException {
       if (object ==null){
             throw new IllegalArgumentException("Un empleado debe tener nif o nie de forma obligada");
