@@ -32,8 +32,9 @@ public abstract class Empleado {
         if (!(object instanceof Nif) && !(object instanceof Nie) ){
             throw new IllegalArgumentException("Error, un empleado debe tener nif o nie y No otra cosa");
         }
+              
         if (object instanceof Nif){
-            this.nif=(Nif)nif; //DownCasting Explicito
+            this.nif=(Nif)object; //DownCasting Explicito
         }else{
             this.nie=(Nie)object; //DownCasting Explicito
         }
