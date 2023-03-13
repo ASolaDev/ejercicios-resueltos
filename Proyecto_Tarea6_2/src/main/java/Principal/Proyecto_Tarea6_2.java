@@ -62,5 +62,6 @@ public class Proyecto_Tarea6_2 {
         //k.
         System.out.println("\nEMPRESA HERO: "+hero);
         
+         
     }
 }

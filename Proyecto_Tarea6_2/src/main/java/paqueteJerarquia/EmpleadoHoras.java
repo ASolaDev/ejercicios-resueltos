@@ -14,8 +14,8 @@ import paqueteOtros.Nif;
  */
 public class EmpleadoHoras extends Empleado{
     protected int numHoras;
-    protected final static int PAGO_HORA=10;
-    protected final static int PAGO_EXTRA=20;
+    protected static int PAGO_HORA=10;
+    protected static int PAGO_EXTRA=20;
 
     public EmpleadoHoras(int numHoras, Nif nif, Nie nie, String nombre, String apellidos, LocalDate fechaNac, LocalDate fechaTrabajo) throws IllegalArgumentException{
         super(nif, nie, nombre, apellidos, fechaNac, fechaTrabajo);

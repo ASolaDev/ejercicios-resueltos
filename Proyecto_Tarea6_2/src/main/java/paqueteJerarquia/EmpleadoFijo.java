@@ -31,8 +31,8 @@ public class EmpleadoFijo extends Empleado{
        return (p.getYears()/3);
     }
 
-    public static int getSALARIO_SEMANAL() {
-        return SALARIO_SEMANAL;
+    public static int  getSALARIO_SEMANAL() {
+        return EmpleadoFijo.SALARIO_SEMANAL;
     }
 
     public static int getINCREMENTO_TRIENIO() {

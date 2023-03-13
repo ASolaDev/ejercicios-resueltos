@@ -12,7 +12,7 @@ import java.time.LocalDate;
  */
 public class EmpleadoComisiones extends Empleado{
     protected float ventas;
-    protected final static int COMISION_VENTAS=10;
+    protected static int COMISION_VENTAS=10;
 
     public EmpleadoComisiones(float ventas, Object object, String nombre, String apellidos, LocalDate fechaNac, LocalDate fechaTrabajo) throws IllegalArgumentException{
         super(object, nombre, apellidos, fechaNac, fechaTrabajo);

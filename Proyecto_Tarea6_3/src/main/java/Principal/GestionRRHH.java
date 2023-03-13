@@ -132,7 +132,7 @@ public class GestionRRHH {
         }
         Empleado e=null;
         if (object instanceof Nif){
-            Nif nif=(Nif)object;   //UpCasting          
+            Nif nif=(Nif)object;   //DownCasting          
             for(Empleado empl: this.empleados){
             if (empl.getNif()!=null && empl.getNif().equals(nif)){                
                 e=empl;   
@@ -140,7 +140,7 @@ public class GestionRRHH {
                }
             }           
         }else{
-            Nie nie=(Nie)object;    //UpCasting       
+            Nie nie=(Nie)object;    //DownCasting       
             for(Empleado empl: this.empleados){
             if (empl.getNie()!=null && empl.getNie().equals(nie)){
                 e=empl;   

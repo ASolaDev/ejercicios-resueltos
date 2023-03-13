@@ -12,8 +12,8 @@ import java.time.LocalDate;
  */
 public class EmpleadoHoras extends Empleado{
     protected int numHoras;
-    protected final static int PAGO_HORA=10;
-    protected final static int PAGO_EXTRA=20;
+    protected static int PAGO_HORA=10;
+    protected static int PAGO_EXTRA=20;
 
     public EmpleadoHoras(int numHoras, Object object, String nombre, String apellidos, LocalDate fechaNac, LocalDate fechaTrabajo) throws IllegalArgumentException{
         super(object, nombre, apellidos, fechaNac, fechaTrabajo);
