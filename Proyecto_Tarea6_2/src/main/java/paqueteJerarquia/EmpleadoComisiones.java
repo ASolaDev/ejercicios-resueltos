@@ -46,10 +46,9 @@ public class EmpleadoComisiones extends Empleado{
     }
     
     @Override
-    public float calculaSueldo(){
-        return (this.ventas*EmpleadoComisiones.COMISION_VENTAS)/100.0f;
+    public float calculaSueldo(){       
+        this.sueldo = (this.ventas*EmpleadoComisiones.COMISION_VENTAS)/100.0f;
+        return this.sueldo;
     }
-    
-    
-    
+          
 }

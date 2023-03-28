@@ -18,14 +18,18 @@ public class Punto1 {
         this.y = y;
     }
     
-    public Punto1(){        
+    public Punto1(){  
+        this(0);
+        /*
         this.x=0;
-        this.y=0;       
+        this.y=0;   */    
     }
     
     public Punto1(int a){
+        this(a,a);
+        /*
         this.x=a;
-        this.y=a;        
+        this.y=a;*/        
     }
     
     public Punto1(Punto1 other){
