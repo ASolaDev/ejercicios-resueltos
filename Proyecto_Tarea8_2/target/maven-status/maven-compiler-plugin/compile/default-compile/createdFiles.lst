@@ -1,0 +1,9 @@
+paquetePrincipal/Biblioteca.class
+paquetePrincipal/Proyecto_Tarea8_2.class
+paquetePublicacion/Libro.class
+paqueteDispositivos/Dispositivo.class
+paquetePublicacion/Fecha.class
+paquetePublicacion/Revista.class
+paqueteInterfaces/Reservable.class
+paquetePublicacion/Publicacion.class
+paqueteInterfaces/Prestable.class
