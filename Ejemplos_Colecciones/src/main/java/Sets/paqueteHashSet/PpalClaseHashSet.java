@@ -37,6 +37,7 @@ public class PpalClaseHashSet {
             System.out.println(" -"+a);
         }
         
+       
         HashSet <Alumno> claseMayores = new HashSet<Alumno>();
         claseMayores.add(aMy1);
         claseMayores.add(aMy2);
@@ -47,7 +48,7 @@ public class PpalClaseHashSet {
         while (iterador.hasNext()){
             System.out.println(" -"+iterador.next());
         }
-        
+       
         
     }
     

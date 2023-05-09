@@ -8,7 +8,7 @@ package Sets.paqueteTreeSet.Clase;
  *
  * @author isabel
  */
-public abstract class Alumno implements Comparable{ //Para que un TreeSet pueda ordenar un objeto compuesto por varios campos, hay que indicarle 
+public abstract class Alumno implements Comparable <Alumno> { //Para que un TreeSet pueda ordenar un objeto compuesto por varios campos, hay que indicarle 
                                                     // cual va a ser el campo por el que queremos ordenar. Se hace con la interface Comparable
                                                     // metodo: int compareTo(Object o)
                                                     // lo conveniente es que se implemente Comparable <Alumno>
@@ -54,7 +54,7 @@ public abstract class Alumno implements Comparable{ //Para que un TreeSet pueda 
     }
 
     @Override
-    public int compareTo(Object o){
-        return this.nombre.compareToIgnoreCase(((Alumno)o).nombre);
+    public int compareTo(Alumno o){
+        return this.nombre.compareToIgnoreCase(o.nombre);
     }
 }

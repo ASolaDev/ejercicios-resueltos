@@ -65,7 +65,8 @@ public class PpalClaseHashSet {
         for(Alumno a: claseBecarios){
             System.out.println("- "+a);
         }
-                
+           
+        
     }
     
 }

@@ -33,7 +33,7 @@ public class Biblioteca {
             libro.reservar(telefono);
         }
         else {
-            System.out.println("El libro "+libro+" NO esta prestado...");
+            throw new IllegalArgumentException("El libro "+libro+" NO esta prestado...");
         }
     }
     
@@ -74,12 +74,12 @@ public class Biblioteca {
         else{
             System.out.println("\n---LISTADO DE LIBROS/DISPOSITIVOS PRESTADOS CUYA FECHA DE DEVOUCION ESTA PASADA---");
             int numPrestamosCaducos=0;
-            for(Prestable p: this.prestamos){
+            for(Prestable p: this.prestamos){                
                 if (p instanceof Libro && ((Libro)p).getFechaDevolucion().isBefore(LocalDate.now())){                   
                     System.out.println("-"+ ++numPrestamosCaducos+" "+((Libro) p).getId()+" "+((Libro) p).getTitulo()+" "+((Libro)p).getFechaDevolucion());                    
                 }else if (p instanceof Dispositivo && ((Dispositivo)p).getFechaDevolucion().isBefore(LocalDate.now())){                   
                     System.out.println(++numPrestamosCaducos+"- "+((Dispositivo) p).getTipo()+" "+((Dispositivo) p).getNumReferencia()+" "+((Dispositivo)p).getFechaDevolucion());                    
-                }
+                }                
             }
              System.out.println("Hay en total "+numPrestamosCaducos+" libros y/o dispositivos");            
         }

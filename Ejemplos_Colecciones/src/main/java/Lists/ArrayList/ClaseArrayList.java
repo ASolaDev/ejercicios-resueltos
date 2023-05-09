@@ -68,15 +68,16 @@ public class ClaseArrayList {
     }
     
     public void listadoOrdenadoPorNombre(){ //Tambien se puede usar ListIterator 
-        List <Alumno> lista= this.alumnos;
+        List <Alumno> lista= new ArrayList<Alumno>(this.alumnos);
         // Collections.sort(List list, Comparator <? super Alumno>);
         Collections.sort(lista, new ComparadorPorNombre());   
-        System.out.println("\n------ALUMNOS BECARIOS ORDENADOS POR NOMBRE EN ORDEN CRECIENTE");
+        
+        System.out.println("\n------ALUMNOS ORDENADOS POR NOMBRE EN ORDEN CRECIENTE");
         for(Alumno a: lista){
             System.out.println("- "+a);
         }        
         
-        System.out.println("\n------ALUMNOS BECARIOS ORDENADOS POR NOMBRE EN ORDEN DECRECIENTE");    
+        System.out.println("\n------ALUMNOS ORDENADOS POR NOMBRE EN ORDEN DECRECIENTE");    
         Collections.reverse(lista);
         for(Alumno a: lista){
             System.out.println("- "+a);
@@ -85,14 +86,14 @@ public class ClaseArrayList {
     }
     
      public void listadoOrdenadoPorEdadNombre(){ //Tambien se puede usar ListIterator 
-        List <Alumno> lista= this.alumnos;               
+        List <Alumno> lista= new ArrayList<Alumno>(this.alumnos);               
         Collections.sort(lista, new ComparadorPorEdadNombre());   
-        System.out.println("\n------ALUMNOS BECARIOS ORDENADOS POR EDAD,NOMBRE EN ORDEN CRECIENTE");
+        System.out.println("\n------ALUMNOS ORDENADOS POR EDAD,NOMBRE EN ORDEN CRECIENTE");
         for(Alumno a: lista){
             System.out.println("- "+a);
         }        
         
-        System.out.println("\n------ALUMNOS BECARIOS ORDENADOS POR EDAD,NOMBRE EN ORDEN DECRECIENTE");    
+        System.out.println("\n------ALUMNOS ORDENADOS POR EDAD,NOMBRE EN ORDEN DECRECIENTE");    
         Collections.reverse(lista);
         for(Alumno a: lista){
             System.out.println("- "+a);

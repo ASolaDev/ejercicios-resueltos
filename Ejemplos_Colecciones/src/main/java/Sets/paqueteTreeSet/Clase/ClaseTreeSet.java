@@ -20,7 +20,7 @@ public class ClaseTreeSet{
     }
    
     public void addAlumno(Alumno a){
-       if (!this.alumnos.add(a)) System.out.println("El alumno ya existe en el grupo");
+       this.alumnos.add(a);
     }
     
     public void listado(){

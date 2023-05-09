@@ -45,6 +45,7 @@ public class PpalArrayList {
         }
          
         
+        
         //Con ListIterator
         System.out.println("--- LISTADO DE ALUMNOS POR ORDEN DE INSERCION DESDE EL PRIMER ALUMNO AL ULTIMO ----");
         ListIterator <Alumno> iterador = alumnos.listIterator();
@@ -65,10 +66,11 @@ public class PpalArrayList {
         claseBecarios.addAlumno(ab3);
         claseBecarios.addAlumno(aMy1);
         
+        claseBecarios.listado();
         claseBecarios.listadoOrdenadoPorNombre();
-        
+         claseBecarios.listado();
         claseBecarios.listadoOrdenadoPorEdadNombre();
-        
+         claseBecarios.listado();
        
         System.out.println("\nEl tercer alumno Becario es : "+claseBecarios.getAlumnoSegunIndice(2)); //Devuelve el 3er alumno
     
