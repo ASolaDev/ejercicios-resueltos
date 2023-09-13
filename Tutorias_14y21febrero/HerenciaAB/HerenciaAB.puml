@@ -1,6 +1,0 @@
-@startuml
-class com.mycompany.herenciaab.A
-class com.mycompany.herenciaab.B
-class com.mycompany.herenciaab.HerenciaAB
-com.mycompany.herenciaab.B --|> com.mycompany.herenciaab.A
-@enduml
