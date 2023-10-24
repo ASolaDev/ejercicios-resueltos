@@ -39,7 +39,7 @@ public class EjCondicional20 {
         int a,b;
                
         System.out.println("Dime un número: ");
-        cadena=teclado.nextLine();
+        cadena=teclado.nextLine();        
         a=Integer.parseInt(cadena);
         
         System.out.println("Dime otro número: ");
@@ -53,8 +53,9 @@ public class EjCondicional20 {
             System.out.println("Es mayor: "+a+" y el menor es: "+b);
         }
         else{
-            System.out.println("Es mayor: "+b+" y el mayor es: "+a);
+            System.out.println("Es mayor: "+b+" y el menor es: "+a);
         }
+        
     }
     
 }
